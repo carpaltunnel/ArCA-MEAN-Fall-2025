@@ -1,6 +1,7 @@
 # VS Code settings
 .vscode
 .metals
+.DS_Store
 
 .idea
 
