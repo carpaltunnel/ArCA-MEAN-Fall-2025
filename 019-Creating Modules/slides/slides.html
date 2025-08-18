@@ -82,7 +82,7 @@
     <div id="create" class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>Creating a Module (CommonJS)</h1>
 
-        <pre><code class="javascript">'use strict';
+        <pre><code class="javascript">
 class Vehicle {
     constructor (make, model, year) {
         this.make = make;
@@ -100,7 +100,7 @@ module.exports = Vehicle;</code></pre>
         </div>
     </div>
 
-    <div id="create" class="step slide" data-rel-x="2200" data-rel-y="0">
+    <div id="createESM" class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>Creating a Module (ESM)</h1>
 
         <pre><code class="javascript">
@@ -123,7 +123,7 @@ export default class Vehicle {
     <div id="use" class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>Using a Module (CommonJS)</h1>
 
-        <pre><code class="javascript">'use strict';
+        <pre><code class="javascript">
 const Vehicle = require('./vehicle');
 
 // Create instance of Vehicle and invoke constructor
@@ -133,10 +133,10 @@ myVehicle.myMake();</code></pre>
         </div>
     </div>
 
-    <div id="use" class="step slide" data-rel-x="2200" data-rel-y="0">
+    <div id="useESM" class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>Using a Module (ESM)</h1>
 
-        <pre><code class="javascript">'use strict';
+        <pre><code class="javascript">
 import Vehicle from './vehicle';
 
 // Create instance of Vehicle and invoke constructor
@@ -163,7 +163,7 @@ myVehicle.myMake();</code></pre>
         <h1>Global Singletons (ESM)</h1>
         <p>Global Singletons need to be used judiciously but they can be very helpful in certain scenarios.</p>
 
-        <pre><code class="javascript">'use strict';
+        <pre><code class="javascript">
 class GlobalSingleton {
     static aFunction() {
     // just a function
