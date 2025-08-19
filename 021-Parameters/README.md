@@ -33,38 +33,52 @@ console.log(`Database param is ${params.database}, user is ${params.username}, p
 ### [yargs](https://www.npmjs.com/package/yargs)
 [yargs](https://www.npmjs.com/package/yargs) is more widely used and has more built in functionality... plus it's pirate themed.
 ```javascript
-const yargs = require('yargs')(process.argv.slice(2))
-    .scriptName('yargs')
-    .usage('Usage: $0 --database db --username un --password pw --numberOfConnections num')
-    .example('$0 --database localhost --username myuser --password superSecret --numberOfConnections 5')
-    .option('d', {
-        alias: 'database',
-        describe: 'Database to connect to',
-        demandOption: '--database is required',
-        type: 'string'
-    })
-    .option('u', {
-        alias: 'username',
-        describe: 'Username to connect with',
-        demandOption: '--username is required',
-        type: 'string'
-    })
-    .option('p', {
-        alias: 'password',
-        describe: 'Password for username',
-        demandOption: '--password is required',
-        type: 'string'
-    })
-    .option('n', {
-        alias: 'numberOfConnections',
-        describe: 'Number of concurrent connections',
-        default: 5,
-        type: 'number'
-    })
-    .showHelpOnFail();
+import yargs from 'yargs';
+import { writeFileSync } from 'fs';
 
-const { database, username, password, numberOfConnections } = yargs.argv;
-console.log(`Database param is ${database}, user is ${username}, pw is ${password}, and number of connections is ${numberOfConnections}`);
+const argv = yargs(process.argv.slice(2))
+.scriptName('yargs')
+.usage('Usage: $0 --filename ./testfile.txt --numberOfItems 14 --json')
+.example('Usage: $0 --filename ./testfile.txt --numberOfItems 14 --json')
+.option('filename', {
+  alias: 'f',
+  type: 'string',
+  description: 'Filename to store data',
+  demandOption: '--filename is a required parameter',
+})
+.option('numberOfItems', {
+  alias: 'n',
+  type: 'number',
+  description: 'Number of items to write to the file',
+  default: 10,
+})
+.option('json', {
+  alias: 'j',
+  type: 'boolean',
+  description: 'If specified, write data in JSON format',
+})
+.parse()
+.showHelpOnFail();
+
+// Destructure from argv
+const { filename, numberOfItems, json } = argv;
+
+console.log(`filename: ${filename}, numberOfItems : ${numberOfItems}, json : ${json}`)
+
+const output = [];
+
+for (let x = 0; x < numberOfItems; x += 1) {
+  output.push(`${x}`);
+}
+
+let outputData = '';
+if (json) {
+  outputData = JSON.stringify(output, null, 2);
+} else {
+  outputData = output.join(',');
+}
+
+writeFileSync(filename, outputData, { encoding: 'utf8' });
 ```
 
 
