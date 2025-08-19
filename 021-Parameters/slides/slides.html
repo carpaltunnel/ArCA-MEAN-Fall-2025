@@ -108,7 +108,7 @@ console.log(`Database param is ${params.database}, user is ${params.username}, p
     <div id="yargs" class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>yargs</h1>
 
-        <pre><code class="javascript">const yargs = require('yargs')(process.argv.slice(2))
+        <pre><code class="javascript">const argv = yargs(process.argv.slice(2))
     .scriptName('yargs')
     .usage('Usage: $0 --database db --username un --password pw --numberOfConnections num')
     .example('$0 --database localhost --username myuser --password superSecret --numberOfConnections 5')
