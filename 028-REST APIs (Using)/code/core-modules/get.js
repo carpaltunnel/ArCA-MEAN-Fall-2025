@@ -1,4 +1,4 @@
-const http = require('http');
+import http  from 'http';
 
 http.get('http://httpbin.org/get', (res) => {
   if (res.statusCode !== 200) {
@@ -10,5 +10,6 @@ http.get('http://httpbin.org/get', (res) => {
   res.setEncoding('utf8');
   let rawData = '';
   res.on('data', (chunk) => { rawData += chunk; });
+  
   res.on('end', () => console.log(rawData));
 });
