@@ -150,25 +150,6 @@ app.use(bodyParser.json());
         </div>
     </div>
 
-    <div id="project-middleware" class="step slide" data-rel-x="2200" data-rel-y="0">
-        <h1>Config Based Custom Middleware</h1>
-        <p>If you're implementing your own middleware and it's not a separate dependency, you can configure it as so :</p>
-        
-        <pre><code class="javascript">{
-    "middleware": {
-        "checker": {
-            "enabled": true,
-            "priority": 10,
-            "router": "/widgets",
-            "module": {
-            "name": "path:middleware/checker"
-            }
-        }
-}</code></pre>
-        
-        <div class="notes">
-        </div>
-    </div>
 
     <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
          so that it covers all the other slides you just saw. 
