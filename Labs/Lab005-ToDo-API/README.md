@@ -1,4 +1,4 @@
-# Lab #7 - REST API with Middleware
+# Lab #5 - REST API with Middleware
 Create a "TODO" REST API service using Express and Body-Parser.  We'll skip the database layer for now and just log the model logic to the console
 
 ## Requirements
