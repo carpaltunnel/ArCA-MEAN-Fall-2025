@@ -10,8 +10,8 @@ Create a "TODO" REST API service using Express and Body-Parser.  We'll skip the 
    4. Update an existing todo item (full replace)
    5. Partially update an existing todo item (patch)
    6. Delete a todo item
-3. Use the model, view, controller, coordinator model to structure your project.
-4. In your coordinator, add a unique ID to the document when new items are created.
+3. Use the model, view, controller, service model to structure your project.
+4. In your service, add a unique ID to the document when new items are created.
 5. Support a "color" property for your todo items.  The rest of the properties are unimportant but you can use the same structure as our previous "TODO" lab.
 6. Add a middleware that will inspect the "color" property and automatically add a "hexColor" property to a todo item when it is being created.  Since there are many hex color values, just support the following to keep things simple (you can hardcode this translation in the middleware) : 
    1. red - #ff0000
