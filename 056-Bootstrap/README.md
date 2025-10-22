@@ -35,7 +35,7 @@ Take note that you should be using a `doctype` of `html` to indicate that your p
 There are hundreds if not thousands of styles provided by Bootstrap but, in the interest of time, we'll only cover some of the most common ones.
 
 First, we need to talk about breakpoints or "grid tiers".  These are the sizes provided by Bootstrap that we'll use to control the horizontal size of the elements in our page.  The predefined tiers are : 
-1. Extra small (this is the default)
+1. Extra small (this is the default - no specifier)
 2. Small (sm)
 3. Medium (md)
 4. Large (lg)
